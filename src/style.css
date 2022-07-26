@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
+
+:root {
+  --font-primary: Poppins, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --font-nav: Uchen, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --clr-primary: #fec453;
+  --clr-secondary: #fefbe9;
+  --clr-tertiary: #f0a04b;
+  --clr-green: #183a1d;
+  --clr-footer: #e1eedd;
+}
+
+/* ---------- general style ---------- */
+body {
+  font-family: var(--font-primary);
+}
+
+ul {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+  font-style: normal;
+  text-decoration: none;
+}
+
+/* ---------- Header Section ---------- */
+.header_section {
+  padding: 0 1rem;
+  background-color: var(--clr-secondary);
+}
+
+.nav_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.nav_list .item:nth-child(2) {
+  text-decoration: underline;
+}
+
+.nav_list .logo img {
+  width: 50px;
+}
+
+.nav_list .item a {
+  color: var(--clr-primary);
+  font-size: 1rem;
+  font-family: var(--font-nav);
+  font-weight: 600;
+}
