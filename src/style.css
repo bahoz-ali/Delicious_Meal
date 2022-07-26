@@ -57,10 +57,13 @@ a {
   font-family: var(--font-nav);
   font-weight: 600;
 }
+
 /* ---------- footer styling ---------- */
 footer {
 font-size: 1rem;
 background-color: var(--clr-footer);
 color: var(--clr-green);
 padding: 1rem 1rem 1rem 2rem;
+border-top: 2px solid var(--clr-green);
+border-bottom: 2px solid var(--clr-green);
 }
