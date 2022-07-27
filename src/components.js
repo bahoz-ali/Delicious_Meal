@@ -5,7 +5,7 @@ export const mealCard = (mealData) => {
 
   const div = document.createElement('div');
   div.setAttribute('data-idmeal', idMeal);
-  div.classList.add('meal')
+  div.classList.add('meal');
 
   div.innerHTML = `
   <div class="meal__header">
@@ -40,4 +40,21 @@ export const mealCard = (mealData) => {
   `;
 
   return div;
+};
+
+export const commentComponent = (comment) => {
+  const li = document.createElement('li');
+  li.classList.add('comments-list');
+
+  li.innerHTML = `
+      ${comment.creation_date}  <span>${comment.username}:</span> ${comment.comment}`;
+
+  return li;
+};
+
+export const instructionComponent = (strInstructions) => {
+  return `
+    ${strInstructions.substring(0, 100)}<span id="dots">....</span>
+    <span id="more">${strInstructions.substring(100)}</span> 
+    `;
 };
