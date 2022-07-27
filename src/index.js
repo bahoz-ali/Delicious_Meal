@@ -13,6 +13,7 @@ import './style.css';
 const popupSection = document.querySelector('.popup-section');
 const mealList = document.querySelector('.meal_list');
 const closePopupBtn = document.querySelector('#close_popup');
+const commentList = document.querySelector('.comments');
 
 document.addEventListener('DOMContentLoaded', () => {
   displayAllMeals();
@@ -58,6 +59,21 @@ mealList.addEventListener('click', async (event) => {
     mealIngredient.innerHTML = `${strIngredient1}, ${strIngredient2}, ${strIngredient3}, ${strIngredient4}`;
 
     popupSection.classList.add('popup--open');
+
+    // ---------- display comment ----------//
+    commentList.innerHTML = '';
+    const comments =  await getOneMealComments (mealId);
+
+    comments.forEach(comment => {
+      const li = document.createElement('li');
+      li.classList.add('comments-list');
+      console.log(comment)
+
+      li.innerHTML =`
+      ${comment.creation_date}  <span>${comment.username}:</span> ${comment.comment}`;
+
+      commentList.appendChild(li);
+    });
   }
 });
 
@@ -80,3 +96,5 @@ function myFunction() {
 closePopupBtn.addEventListener('click', () => {
   popupSection.classList.remove('popup--open');
 });
+
+
