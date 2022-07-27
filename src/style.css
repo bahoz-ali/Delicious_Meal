@@ -54,7 +54,7 @@ button {
 .btn.btn--primary {
   background-color: var(--clr-primary);
   font-weight: 700;
-  box-shadow: 0px 0px 8px 0px rgba(0,255,35,0.50);
+  box-shadow: 0px 0px 8px 0px rgba(0, 255, 35, 0.5);
 }
 
 .btn.btn--secondary {
@@ -66,6 +66,7 @@ button {
   font-size: 1.4rem;
   cursor: pointer;
 }
+
 /* ---------- Header Section ---------- */
 .header_section {
   padding: 0 1rem;
@@ -97,7 +98,7 @@ button {
 /* ---------- home main section ---------- */
 .main_section {
   margin: 0 auto;
-  padding: 3rem 3rem 4rem ;
+  padding: 3rem 3rem 4rem;
   width: 100%;
 }
 
@@ -149,19 +150,6 @@ button {
   padding: 1rem 0;
 }
 
-
-
-/* ---------- footer styling ---------- */
-footer {
-font-size: 1rem;
-background-color: var(--clr-footer);
-color: var(--clr-green);
-padding: 1rem 1rem 1rem 2rem;
-border-top: 2px solid var(--clr-green);
-border-bottom: 2px solid var(--clr-green);
-}
-
-
 .popup-container {
   display: grid;
   border: 2px solid var(--clr-green);
@@ -174,38 +162,10 @@ img.food-list {
   margin: 20px;
 }
 
-button {
-  width: 100px;
-  height: 30px;
-  box-shadow: 5px 5px;
-  font-family: inherit;
-  font-size: 17px;
-  font-weight: 500;
-  background-color: var(--clr-footer);
-  color: rgb(15, 15, 15);
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: var(--clr-primary);
-  color: #fff;
-}
-
-.button:active {
-  background-color: var(--clr-primary);
-  transition: 0.3s;
-}
-
-.button:disabled {
-  border: 1px solid var(--clr-green);
-  background-color: var(--clr-secondary);
-  color: var(--clr-tertiary);
-}
-
 /* ---------- Popup section ---------- */
 .popup-section {
   background: var(--clr-primary);
-  display: block;
+  display: none;
 }
 
 i.fas.fa-times {
@@ -336,8 +296,9 @@ i.fas.fa-times {
   border-radius: 0.5rem;
 }
 
+/* ---------- footer ---------- */
 .footer {
-  font-size: 1rem; 
+  font-size: 1rem;
   background-color: var(--clr-footer);
   color: var(--clr-green);
   padding: 2rem 1rem 2rem 2rem;
