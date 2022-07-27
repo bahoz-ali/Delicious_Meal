@@ -19,6 +19,7 @@ body {
 }
 
 ul {
+  padding: 0;
   list-style: none;
 }
 
@@ -60,6 +61,16 @@ button {
 .btn.btn--secondary {
   color: var(--clr-secondary);
   background-color: var(--clr-tertiary);
+}
+
+.btn.btn--small {
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
+  background-color: transparent;
+  text-decoration: underline;
+  color: var(--clr-secondary);
+  margin-bottom: 1rem;
 }
 
 .fa-heart {
@@ -168,6 +179,10 @@ img.food-list {
   display: none;
 }
 
+.popup-section.popup--open {
+  display: block;
+}
+
 i.fas.fa-times {
   padding-left: 100%;
 }
@@ -220,15 +235,21 @@ i.fas.fa-times {
   align-items: center;
 }
 
-.popup .display .display-details h3 {
-  font-size: 2rem;
+#meal_desc {
+  font-size: 0.7rem;
+  line-height: 1.1;
+  text-align: justify;
 }
 
-.popup .display .display-details ul > li {
+#more {
+  display: none;
+}
+
+.display .display-details li {
   list-style: none;
-  font-size: 1.5rem;
-  padding-bottom: 1rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  padding-bottom: 0.2rem;
+  line-height: 1;
 }
 
 .popup .comment-section {
@@ -237,22 +258,24 @@ i.fas.fa-times {
   align-items: center;
 }
 
-.popup .comment-section .comment-show {
+.comment-section .comment-show {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.popup .comment-section .comment-show h3 {
-  font-size: 2rem;
+.comment-section .comment-show h3 {
+  font-size: 1rem;
   font-weight: 900;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
   color: #d2d1d3;
 }
 
 .popup .comment-section .comment-show ul {
   list-style: none;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
 .popup .comment-section .comment {
@@ -262,9 +285,9 @@ i.fas.fa-times {
   align-items: center;
 }
 
-.popup .comment-section .comment h3 {
+.comment-section .comment h3 {
   font-size: 1.5rem;
-  margin-top: 5rem;
+  margin: 1rem 0;
 }
 
 .popup .comment-section .comment form {
@@ -294,6 +317,11 @@ i.fas.fa-times {
   border: none;
   padding: 10px;
   border-radius: 0.5rem;
+}
+
+.meal_detail {
+  font-size: 0.8rem;
+  color: var(--clr-primary);
 }
 
 /* ---------- footer ---------- */

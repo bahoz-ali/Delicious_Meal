@@ -4,7 +4,7 @@ export const mealCard = (mealData) => {
   const { strMeal, strMealThumb, idMeal } = mealData;
 
   const div = document.createElement('div');
-  div.setAttribute('data-id', idMeal);
+  div.setAttribute('data-idmeal', idMeal);
   div.classList.add('meal')
 
   div.innerHTML = `
@@ -27,11 +27,11 @@ export const mealCard = (mealData) => {
 
           <div class="meal__body">
             <div class="btn_container">
-              <button data-idMeal=${idMeal} class="btn btn--secondary" type="button">Comments</button>
+              <button id="comment_btn" data-idmeal=${idMeal} class="btn btn--secondary" type="button">Comments</button>
             </div>
 
             <div class="btn_container">
-              <button data-idMeal=${idMeal} class="btn btn--primary" type="button">
+              <button data-idmeal=${idMeal} class="btn btn--primary" type="button">
                 Reservation
               </button>
             </div>

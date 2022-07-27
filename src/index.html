@@ -37,60 +37,42 @@
 
     <!-- ----- main section ----- -->
     <main class="main_section">
-      <div class="meal_list">
-        <!-- one meal item -->
-        <div class="meal">
-          <div class="meal__header">
-            <div class="meal__img">
-              <img
-                src="https://aws.wideinfo.org/vinstafood.com/wp-content/uploads/2019/05/12105646/imageurlhttps3A2F2Fimg1.cookinglight.timeinc.net2Fsites2Fdefault2Ffiles2F15300301472Fchicken-and-bulgur-salad-with-peaches-1808-p17-768x576.jpg"
-                alt=""
-              />
-            </div>
-
-            <div class="meal__info">
-              <p>red fish</p>
-              <div class="heart_count">
-                <i class="fa-regular fa-heart"></i>
-                <p>5 likes</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="meal__body">
-            <div class="btn_container">
-              <button class="btn btn--secondary" type="button">Comments</button>
-            </div>
-
-            <div class="btn_container">
-              <button class="btn btn--primary" type="button">
-                Reservation
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="meal_list"></div>
     </main>
 
     <section class="popup-section">
       <div class="popup">
         <div class="container">
-          <i class="fas fa-times"></i>
+          <i
+            style="font-size: 1.4rem; cursor: pointer"
+            id="close_popup"
+            class="fas fa-times"
+          ></i>
           <div class="display">
             <div class="description">
-              <img src="" alt="meat-sauce" />
-              <h3 class="food-title">meat-sauce</h3>
+              <img id="popup_img" src="" alt="meat-sauce" />
+              <h3 id="meal_name">meat-sauce</h3>
             </div>
+
             <div class="display-details">
-              <h3>food recipe</h3>
               <ul>
                 <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Omnis, quas.
+                  <p id="meal_desc">it's lovely food, you can test it.</p>
+                  <button class="btn btn--small" id="show_more">Read more</button>
                 </li>
-                <li><strong>country: "Nigeria"</strong></li>
-                <li><strong>Categories: "tomatoe"</strong></li>
-                <li><strong>ingridient: "meat,tomatoe"</strong></li>
+
+                <li>
+                  <span>Country:</span> <span class="meal_detail" id="meal_country">Italia</span>
+                </li>
+
+                <li>
+                  <span>Categories:</span> <span class="meal_detail" id="meal_cat">Meal</span>
+                </li>
+
+                <li>
+                  <span>Ingredient:</span>
+                  <span class="meal_detail" id="meal_ing">salt, pepper</span>
+                </li>
               </ul>
             </div>
           </div>
