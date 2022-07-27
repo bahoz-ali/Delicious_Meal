@@ -14,6 +14,7 @@ const popupSection = document.querySelector('.popup-section');
 const mealList = document.querySelector('.meal_list');
 const closePopupBtn = document.querySelector('#close_popup');
 const commentList = document.querySelector('.comments');
+const commentCount = document.querySelector('.total-comments');
 
 document.addEventListener('DOMContentLoaded', () => {
   displayAllMeals();
@@ -63,6 +64,7 @@ mealList.addEventListener('click', async (event) => {
     // ---------- display comment ----------//
     commentList.innerHTML = '';
     const comments =  await getOneMealComments (mealId);
+    commentCount.innerHTML = comments.length;
 
     comments.forEach(comment => {
       const li = document.createElement('li');
