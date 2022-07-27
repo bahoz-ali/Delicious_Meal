@@ -1,4 +1,4 @@
-import { mealCard } from './coponents';
+import { mealCard } from './components';
 import { getMeals } from './service';
 
 const mealList = document.querySelector('.meal_list');
