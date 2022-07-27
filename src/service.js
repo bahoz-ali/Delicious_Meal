@@ -25,3 +25,58 @@ export const getOneMeal = async (mealId) => {
 };
 
 // comment and rating.
+
+export const getAllLikes = async () => {
+  try {
+    const response = await fetch(API.endPointLikes);
+    const likes = await response.json();
+    return likes;
+  } catch (error) {
+    return [];
+  }
+};
+
+export const increaseLike = async (idMeal) => {
+  if (!idMeal) return;
+
+  const data = { item_id: idMeal };
+
+  const fetchContent = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  };
+
+  await fetch(API.endPointLikes, fetchContent);
+};
+
+export const getOneMealComments = async (idMeal) => {
+  if (!idMeal) return;
+
+  try {
+    const response = await fetch(`${API.endPointComments}?item_id=${idMeal}`);
+    const comments = await response.json();
+
+    return comments;
+  } catch (error) {
+    return [];
+  }
+};
+
+export const addComment = async (commentObj) => {
+  if (!commentObj) return;
+
+  try {
+    const fetchContent = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(commentObj),
+    };
+
+    await fetch(API.endPointComments, fetchContent);
+  } catch (error) {}
+};

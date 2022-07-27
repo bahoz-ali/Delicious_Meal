@@ -1,5 +1,12 @@
 import './normalize.css';
-import { getMeals, getOneMeal } from './service';
+import {
+  addComment,
+  getAllLikes,
+  getMeals,
+  getOneMeal,
+  getOneMealComments,
+  increaseLike,
+} from './service';
 import { displayAllMeals } from './startup';
 import './style.css';
 
