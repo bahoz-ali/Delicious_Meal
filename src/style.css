@@ -13,6 +13,8 @@
 
 /* ---------- general style ---------- */
 body {
+  margin: 0;
+  padding: 0;
   font-family: var(--font-primary);
 }
 
@@ -30,6 +32,40 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+}
+
+button {
+  margin: 0;
+}
+
+/* ---------- Components ---------- */
+.btn {
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  padding: 0.8rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--clr-green);
+}
+
+.btn.btn--primary {
+  background-color: var(--clr-primary);
+  font-weight: 700;
+  box-shadow: 0px 0px 8px 0px rgba(0,255,35,0.50);
+}
+
+.btn.btn--secondary {
+  color: var(--clr-secondary);
+  background-color: var(--clr-tertiary);
+}
+
+.fa-heart {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
 /* ---------- Header Section ---------- */
 .header_section {
   padding: 0 1rem;
@@ -40,7 +76,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 40%;
+  width: 60%;
 }
 
 .nav_list .item:nth-child(2) {
@@ -57,6 +93,63 @@ a {
   font-family: var(--font-nav);
   font-weight: 600;
 }
+
+/* ---------- home main section ---------- */
+.main_section {
+  margin: 0 auto;
+  padding: 3rem 3rem 4rem ;
+  width: 100%;
+}
+
+.meal_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 2rem;
+}
+
+.meal {
+  width: 100%;
+}
+
+.meal .meal__img {
+  height: 250px;
+}
+
+.meal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meal .meal__info {
+  background-color: var(--clr-footer);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 1rem 0;
+  font-size: 1rem;
+  color: var(--clr-green);
+  font-weight: 700;
+}
+
+.meal__info .heart_count {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.meal .meal__body {
+  background-color: var(--clr-footer);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+
 
 /* ---------- footer styling ---------- */
 footer {
@@ -241,4 +334,13 @@ i.fas.fa-times {
   border: none;
   padding: 10px;
   border-radius: 0.5rem;
+}
+
+.footer {
+  font-size: 1rem; 
+  background-color: var(--clr-footer);
+  color: var(--clr-green);
+  padding: 2rem 1rem 2rem 2rem;
+  border-top: 2px solid var(--clr-green);
+  border-bottom: 2px solid var(--clr-green);
 }
