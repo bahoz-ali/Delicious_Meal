@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      />
     <title>Delicious Meal</title>
   </head>
   <body>
@@ -11,10 +15,9 @@
       <ul class="nav_list">
         <li class="item logo">
           <a href="#">
-            <img src="./assets/meal.jpg" alt="this is logo of Meal" />
+          <img src="./assets/meal.jpg" alt="this is logo of Meal" />
           </a>
         </li>
-
         <li class="item">
           <a href="#">Meals(<span class="meal_count">6</span>)</a>
         </li>
@@ -22,6 +25,70 @@
         <li class="item"><a href="#">Order now</a></li>
       </ul>
     </nav>
+    
+    <section class="popup-section">
+      <div class="popup">
+        <div class="container">
+          <i class="fas fa-times"></i>
+          <div class="display">
+            <div class="description">
+              <img
+                src="./assets/meat-sauce.jpg"
+                alt="meat-sauce"
+              />
+              <h3 class="food-title">meat-sauce</h3>
+            </div>
+            <div class="display-details">
+              <h3>food recipe</h3>
+              <ul>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Omnis, quas.
+                </li>
+                <li><strong>country: "Nigeria"</strong></li>
+                <li><strong>Categories: "tomatoe"</strong></li>
+                <li><strong>ingridient: "meat,tomatoe"</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="comment-section">
+            <div class="comment-show">
+              <h3 class="counter">
+                Comments(<span class="total-comments">0</span>)
+              </h3>
+              <ul class="comments">
+                <li class="comments-list">
+                  2022-07-25 <span> star:</span> Delicious
+                </li>
+              </ul>
+            </div>
+            <div class="comment">
+              <div class="add-comment">
+                <h3>Add Comment</h3>
+              </div>
+              <form class="form">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your name"
+                  required=""
+                />
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="30"
+                  rows="10"
+                  placeholder="Your insight"
+                  required=""
+                ></textarea>
+                <button class="button button1">comments</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer>
       <p> &copy Created by Bahoz and Rejoice under CC License</p>
     </footer>
