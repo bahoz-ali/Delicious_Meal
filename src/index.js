@@ -61,17 +61,22 @@ mealList.addEventListener('click', async (event) => {
 
     popupSection.classList.add('popup--open');
 
-    // ---------- display comment ----------//
+    // ---------- display comments ----------//
     commentList.innerHTML = '';
-    const comments =  await getOneMealComments (mealId);
+    const comments = await getOneMealComments(mealId);
+
+    if (comments.error) {
+      commentCount.innerHTML = 0;
+      return;
+    }
+
     commentCount.innerHTML = comments.length;
 
-    comments.forEach(comment => {
+    comments.forEach((comment) => {
       const li = document.createElement('li');
       li.classList.add('comments-list');
-      console.log(comment)
 
-      li.innerHTML =`
+      li.innerHTML = `
       ${comment.creation_date}  <span>${comment.username}:</span> ${comment.comment}`;
 
       commentList.appendChild(li);
@@ -98,5 +103,3 @@ function myFunction() {
 closePopupBtn.addEventListener('click', () => {
   popupSection.classList.remove('popup--open');
 });
-
-
