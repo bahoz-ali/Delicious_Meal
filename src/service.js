@@ -92,3 +92,7 @@ export const addComment = async (commentObj) => {
     await fetch(API.endPointComments, fetchContent);
   } catch (error) {}
 };
+
+export const numberComments = (comments) => {
+  return comments.length;
+}

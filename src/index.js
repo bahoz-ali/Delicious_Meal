@@ -1,12 +1,14 @@
 import './normalize.css';
+import './style.css';
 import {
   displayAllMeals,
   displayMealCountInHeader,
-  toggleHeart,
   updateDetailPopupMeal,
   updateHeartLikes,
 } from './utils';
-import './style.css';
+
+
+
 import { increaseLike } from './service';
 
 const popupSection = document.querySelector('.popup-section');
