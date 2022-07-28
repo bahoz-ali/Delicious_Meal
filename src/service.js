@@ -36,6 +36,18 @@ export const getAllLikes = async () => {
   }
 };
 
+export const getOneMealLikes = async (id) => {
+  const likes = await getAllLikes();
+
+  let result = likes.find((o) => {
+    return +o.item_id === +id;
+  });
+
+  if (!result) return 0;
+
+  return result && typeof result.likes === 'number' ? result.likes : 0;
+};
+
 export const increaseLike = async (idMeal) => {
   if (!idMeal) return;
 

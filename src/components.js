@@ -1,7 +1,8 @@
 export const mealCard = (mealData) => {
   if (!mealData) return null;
 
-  const { strMeal, strMealThumb, idMeal } = mealData;
+  const { strMeal, strMealThumb, idMeal, likes } = mealData;
+  
 
   const div = document.createElement('div');
   div.setAttribute('data-idmeal', idMeal);
@@ -19,21 +20,15 @@ export const mealCard = (mealData) => {
             <div class="meal__info">
               <p>${strMeal}</p>
               <div class="heart_count">
-                <i class="fa-regular fa-heart"></i>
-                <p>5 likes</p>
+                <i id="heart_btn" data-idmeal=${idMeal} class="fa-solid fa-heart"></i>
+                <p id="count_likes">${likes}</p>
               </div>
             </div>
           </div>
 
           <div class="meal__body">
             <div class="btn_container">
-              <button id="comment_btn" data-idmeal=${idMeal} class="btn btn--secondary" type="button">Comments</button>
-            </div>
-
-            <div class="btn_container">
-              <button data-idmeal=${idMeal} class="btn btn--primary" type="button">
-                Reservation
-              </button>
+              <button id="comment_btn" data-idmeal=${idMeal} class="btn btn--primary" type="button">Comments</button>
             </div>
           </div>
   
