@@ -39,9 +39,7 @@ export const getAllLikes = async () => {
 export const getOneMealLikes = async (id) => {
   const likes = await getAllLikes();
 
-  let result = likes.find((o) => {
-    return +o.item_id === +id;
-  });
+  const result = likes.find((o) => +o.item_id === +id);
 
   if (!result) return 0;
 
@@ -71,8 +69,10 @@ export const getOneMealComments = async (idMeal) => {
     const response = await fetch(`${API.endPointComments}?item_id=${idMeal}`);
     const comments = await response.json();
 
+    /* eslint-disable-next-line */
     return comments;
   } catch (error) {
+    /* eslint-disable-next-line */
     return [];
   }
 };
@@ -90,9 +90,9 @@ export const addComment = async (commentObj) => {
     };
 
     await fetch(API.endPointComments, fetchContent);
-  } catch (error) {}
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
-export const numberComments = (comments) => {
-  return comments.length;
-}
+export const numberComments = (comments) => comments.length;

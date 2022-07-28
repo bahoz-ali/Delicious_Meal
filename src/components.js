@@ -1,8 +1,9 @@
 export const mealCard = (mealData) => {
   if (!mealData) return null;
 
-  const { strMeal, strMealThumb, idMeal, likes } = mealData;
-  
+  const {
+    strMeal, strMealThumb, idMeal, likes,
+  } = mealData;
 
   const div = document.createElement('div');
   div.setAttribute('data-idmeal', idMeal);
@@ -47,9 +48,7 @@ export const commentComponent = (comment) => {
   return li;
 };
 
-export const instructionComponent = (strInstructions) => {
-  return `
+export const instructionComponent = (strInstructions) => `
     ${strInstructions.substring(0, 100)}<span id="dots">....</span>
     <span id="more">${strInstructions.substring(100)}</span> 
     `;
-};

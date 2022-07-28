@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 mealList.addEventListener('click', async (event) => {
-  const target = event.target;
+  const { target } = event;
 
   if (target.id === 'comment_btn') {
     const mealId = target.dataset.idmeal;
@@ -43,15 +43,15 @@ closePopupBtn.addEventListener('click', () => {
   popupSection.classList.remove('popup--open');
 });
 
-commentForm.addEventListener('submit',async (event) => {
+commentForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  const item_id = event.target.dataset.idmeal;
+  const itemId = event.target.dataset.idmeal;
   const username = usernameInput.value;
   const comment = descriptionInput.value;
 
-  await addComment({ item_id, username, comment });
-  displayAllComments(item_id);
+  await addComment({ item_id: itemId, username, comment });
+  displayAllComments(itemId);
 
-  commentForm.reset()
+  commentForm.reset();
 });

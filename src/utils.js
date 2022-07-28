@@ -41,9 +41,9 @@ export const displayAllComments = async (mealId) => {
 };
 
 export function showMoreLessText() {
-  var dots = document.getElementById('dots');
-  var moreText = document.getElementById('more');
-  var btnText = document.getElementById('show_more');
+  const dots = document.getElementById('dots');
+  const moreText = document.getElementById('more');
+  const btnText = document.getElementById('show_more');
 
   if (dots.style.display === 'none') {
     dots.style.display = 'inline';
