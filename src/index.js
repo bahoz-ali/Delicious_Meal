@@ -6,6 +6,7 @@ import {
   getOneMeal,
   getOneMealComments,
   increaseLike,
+  numberComments,
 } from './service';
 import { displayAllMeals } from './startup';
 import './style.css';
