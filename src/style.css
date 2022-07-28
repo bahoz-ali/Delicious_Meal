@@ -105,6 +105,11 @@ button {
   font-size: 1rem;
   font-family: var(--font-nav);
   font-weight: 600;
+  transition: all 0.3s linear;
+}
+
+.nav_list .item a:hover {
+  color: var(--clr-tertiary);
 }
 
 /* ---------- home main section ---------- */
@@ -112,6 +117,7 @@ button {
   margin: 0 auto;
   padding: 3rem 3rem 4rem;
   width: 100%;
+  background-color: var(--clr-tertiary);
 }
 
 .meal_list {
