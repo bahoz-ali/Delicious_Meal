@@ -1,5 +1,10 @@
 import { commentComponent, instructionComponent, mealCard } from './components';
-import { getMeals, getOneMeal, getOneMealComments } from './service';
+import {
+  getMeals,
+  getOneMeal,
+  getOneMealComments,
+  getOneMealLikes,
+} from './service';
 
 const mealList = document.querySelector('.meal_list');
 const commentList = document.querySelector('.comments');
@@ -10,7 +15,10 @@ export const displayAllMeals = async () => {
 
   if (!meals) return;
 
-  meals.forEach((meal) => {
+  meals.forEach(async (meal) => {
+    const mealLikes = await getOneMealLikes(meal.idMeal);
+    meal.likes = mealLikes;
+
     const mealElement = mealCard(meal);
     mealList.appendChild(mealElement);
   });
