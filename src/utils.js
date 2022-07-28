@@ -91,3 +91,27 @@ export const updateDetailPopupMeal = async (mealId) => {
 
   displayAllComments(mealId);
 };
+
+export const displayMealCountInHeader = async () => {
+  const mealCount = document.querySelector('.meal_count');
+  const meals = await getMeals();
+
+  if (meals) mealCount.innerHTML = meals.length;
+  else mealCount.innerHTML = 0;
+};
+
+export const toggleHeart = (target) => {
+  if (target.classList.contains('fa-regular')) {
+    target.classList.replace('fa-regular', 'fa-solid');
+  } else {
+    target.classList.replace('fa-solid', 'fa-regular');
+  }
+};
+
+export const updateHeartLikes = (target) => {
+  // toggleHeart(target);
+
+  const parentHeartIcon = target.parentElement;
+  const countLikes = parentHeartIcon.querySelector('#count_likes');
+  countLikes.innerHTML = Number(countLikes.innerHTML) + 1;
+};

@@ -20,8 +20,8 @@ export const mealCard = (mealData) => {
             <div class="meal__info">
               <p>${strMeal}</p>
               <div class="heart_count">
-                <i class="fa-regular fa-heart"></i>
-                <p>${likes}</p>
+                <i id="heart_btn" data-idmeal=${idMeal} class="fa-solid fa-heart"></i>
+                <p id="count_likes">${likes}</p>
               </div>
             </div>
           </div>
