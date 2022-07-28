@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
     <title>Delicious Meal</title>
 
     <!-- font awesome icons -->
@@ -23,9 +27,8 @@
             <img src="./assets/meal.jpg" alt="this is logo of Meal" />
           </a>
         </li>
-
         <li class="item">
-          <a href="#">Meals(<span class="meal_count">6</span>)</a>
+          <a href="#">Meals(<span class="meal_count"> ... </span>)</a>
         </li>
         <li class="item"><a href="#">Categories</a></li>
         <li class="item"><a href="#">Order now</a></li>
@@ -34,42 +37,88 @@
 
     <!-- ----- main section ----- -->
     <main class="main_section">
-      <div class="meal_list">
-        <!-- one meal item -->
-        <div class="meal">
-          <div class="meal__header">
-            <div class="meal__img">
-              <img
-                src="https://aws.wideinfo.org/vinstafood.com/wp-content/uploads/2019/05/12105646/imageurlhttps3A2F2Fimg1.cookinglight.timeinc.net2Fsites2Fdefault2Ffiles2F15300301472Fchicken-and-bulgur-salad-with-peaches-1808-p17-768x576.jpg"
-                alt=""
-              />
+      <div class="meal_list"></div>
+    </main>
+
+    <section class="popup-section">
+      <div class="popup">
+        <div class="container">
+          <i
+            style="font-size: 1.4rem; cursor: pointer"
+            id="close_popup"
+            class="fas fa-times"
+          ></i>
+          <div class="display">
+            <div class="description">
+              <img id="popup_img" src="" alt="meat-sauce" />
+              <h3 id="meal_name">meat-sauce</h3>
             </div>
 
-            <div class="meal__info">
-              <p>red fish</p>
-              <div class="heart_count">
-                <i class="fa-regular fa-heart"></i>
-                <p>5 likes</p>
-              </div>
+            <div class="display-details">
+              <ul>
+                <li>
+                  <p id="meal_desc">it's lovely food, you can test it.</p>
+                  <button class="btn btn--small" id="show_more">
+                    Read more
+                  </button>
+                </li>
+
+                <li>
+                  <span>Country:</span>
+                  <span class="meal_detail" id="meal_country">Italia</span>
+                </li>
+
+                <li>
+                  <span>Categories:</span>
+                  <span class="meal_detail" id="meal_cat">Meal</span>
+                </li>
+
+                <li>
+                  <span>Ingredient:</span>
+                  <span class="meal_detail" id="meal_ing">salt, pepper</span>
+                </li>
+              </ul>
             </div>
           </div>
+          <div class="comment-section">
+            <div class="comment-show">
+              <h3 class="counter">
+                Comments(<span class="total-comments">0</span>)
+              </h3>
 
-          <div class="meal__body">
-            <div class="btn_container">
-              <button class="btn btn--secondary" type="button">Comments</button>
+              <ul class="comments">
+                <li class="comments-list"></li>
+              </ul>
             </div>
 
-            <div class="btn_container">
-              <button class="btn btn--primary" type="button">
-                Reservation
-              </button>
+            <div class="comment">
+              <div class="add-comment">
+                <h3>Add Comment</h3>
+              </div>
+
+              <form id="comment_form" class="form">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your name"
+                  required
+                />
+                <input
+                  name="description"
+                  id="description"
+                  placeholder="Your insight"
+                />
+                
+                <button type="submit" class="btn btn--primary">comment</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </section>
 
-    <footer>
+    <footer class="footer">
       <p>&copy Created by Bahoz and Rejoice under CC License</p>
     </footer>
   </body>

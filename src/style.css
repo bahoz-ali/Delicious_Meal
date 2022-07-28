@@ -1,9 +1,10 @@
+/* eslint-disable no-descending-specificity */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
 
 :root {
-  --font-primary: Poppins, Cochin, Georgia, Times, 'Times New Roman', serif;
-  --font-nav: Uchen, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --font-primary: poppins, cochin, georgia, times, 'Times New Roman', serif;
+  --font-nav: uchen, 'Segoe UI', tahoma, geneva, verdana, sans-serif;
   --clr-primary: #fec453;
   --clr-secondary: #fefbe9;
   --clr-tertiary: #f0a04b;
@@ -19,6 +20,7 @@ body {
 }
 
 ul {
+  padding: 0;
   list-style: none;
 }
 
@@ -54,7 +56,7 @@ button {
 .btn.btn--primary {
   background-color: var(--clr-primary);
   font-weight: 700;
-  box-shadow: 0px 0px 8px 0px rgba(0,255,35,0.50);
+  box-shadow: 0 0 8px 0 rgba(0, 255, 35, 0.5);
 }
 
 .btn.btn--secondary {
@@ -62,10 +64,21 @@ button {
   background-color: var(--clr-tertiary);
 }
 
+.btn.btn--small {
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
+  background-color: transparent;
+  text-decoration: underline;
+  color: var(--clr-secondary);
+  margin-bottom: 1rem;
+}
+
 .fa-heart {
   font-size: 1.4rem;
   cursor: pointer;
 }
+
 /* ---------- Header Section ---------- */
 .header_section {
   padding: 0 1rem;
@@ -83,7 +96,7 @@ button {
   text-decoration: underline;
 }
 
-.nav_list .logo img {
+.nav_list img {
   width: 50px;
 }
 
@@ -92,13 +105,19 @@ button {
   font-size: 1rem;
   font-family: var(--font-nav);
   font-weight: 600;
+  transition: all 0.3s linear;
+}
+
+.nav_list .item a:hover {
+  color: var(--clr-tertiary);
 }
 
 /* ---------- home main section ---------- */
 .main_section {
   margin: 0 auto;
-  padding: 3rem 3rem 4rem ;
+  padding: 3rem 3rem 4rem;
   width: 100%;
+  background-color: var(--clr-tertiary);
 }
 
 .meal_list {
@@ -149,10 +168,176 @@ button {
   padding: 1rem 0;
 }
 
+.popup-container {
+  display: grid;
+  border: 2px solid var(--clr-green);
+  padding: 20px;
+  grid-template-columns: auto auto auto;
+}
 
+img.food-list {
+  display: grid;
+  margin: 20px;
+}
 
-/* ---------- footer styling ---------- */
-footer {
+/* ---------- Popup section ---------- */
+.popup-section {
+  background: var(--clr-primary);
+  display: none;
+}
+
+.popup-section.popup--open {
+  display: block;
+}
+
+i.fas.fa-times {
+  padding-left: 100%;
+}
+
+.popup {
+  width: 60vw;
+  height: 90vh;
+  padding: 30px 50px;
+  background-color: var(--clr-green);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 20px;
+  overflow-y: scroll;
+  color: #d2d1d3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup .display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup .display .description {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup .display .description img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.popup .display .description .food-title {
+  font-size: 2.8rem;
+}
+
+.popup .display .display-details {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#meal_name {
+  margin: 0.5rem 0 0 0;
+}
+
+#meal_desc {
+  font-size: 0.7rem;
+  line-height: 1.1;
+  text-align: justify;
+}
+
+#more {
+  display: none;
+}
+
+.display .display-details li {
+  list-style: none;
+  font-size: 0.8rem;
+  padding-bottom: 0.2rem;
+  line-height: 1;
+}
+
+.popup .comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-section .comment-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-section .comment-show h3 {
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  color: #d2d1d3;
+}
+
+.popup .comment-section .comment-show ul {
+  list-style: none;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.popup .comment-section .comment {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-section .comment h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.comment-section .comment form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+#comment_form input {
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 5px 5px 5px 10px;
+  border-radius: 3px;
+  border: none;
+  font-family: var(--font-primary);
+}
+
+#description {
+  font-family: var(--font-primary);
+  width: 100%;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 5px 5px 10px;
+  height: 5rem;
+  text-align: start;
+}
+
+.meal_detail {
+  font-size: 0.7rem;
+  color: var(--clr-primary);
+}
+
+/* ---------- footer ---------- */
+.footer {
   font-size: 1rem;
   background-color: var(--clr-footer);
   color: var(--clr-green);

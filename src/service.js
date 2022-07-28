@@ -1,4 +1,4 @@
-import { API } from './variables';
+import { API } from './variables.js';
 
 export const getMeals = async () => {
   try {
@@ -25,3 +25,75 @@ export const getOneMeal = async (mealId) => {
 };
 
 // comment and rating.
+
+export const getAllLikes = async () => {
+  try {
+    const response = await fetch(API.endPointLikes);
+    const likes = await response.json();
+    return likes;
+  } catch (error) {
+    return [];
+  }
+};
+
+export const getOneMealLikes = async (id) => {
+  const likes = await getAllLikes();
+
+  const result = likes.find((o) => +o.item_id === +id);
+
+  if (!result) return 0;
+
+  return result && typeof result.likes === 'number' ? result.likes : 0;
+};
+
+export const increaseLike = async (idMeal) => {
+  if (!idMeal) return;
+
+  const data = { item_id: idMeal };
+
+  const fetchContent = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  };
+
+  await fetch(API.endPointLikes, fetchContent);
+};
+
+export const getOneMealComments = async (idMeal) => {
+  if (!idMeal) return;
+
+  try {
+    const response = await fetch(`${API.endPointComments}?item_id=${idMeal}`);
+    const comments = await response.json();
+
+    /* eslint-disable-next-line */
+    return comments;
+  } catch (error) {
+    /* eslint-disable-next-line */
+    return [];
+  }
+};
+
+export const addComment = async (commentObj) => {
+  if (!commentObj) return;
+
+  try {
+    const fetchContent = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(commentObj),
+    };
+
+    await fetch(API.endPointComments, fetchContent);
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const numberComments = (comments) => comments.length;
+export const numberLikes = (meal) => meal.likes;
