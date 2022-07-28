@@ -28,7 +28,7 @@ export const displayAllComments = async (mealId) => {
   commentList.innerHTML = '';
 
   const comments = await getOneMealComments(mealId);
-  if (comments.error) {
+  if (comments && comments.error) {
     commentCount.innerHTML = 0;
     return;
   }

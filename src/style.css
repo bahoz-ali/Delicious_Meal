@@ -304,17 +304,24 @@ i.fas.fa-times {
   width: 100%;
 }
 
-.comment form input[type='text'],
-.comment form textarea {
+#comment_form input {
   width: 100%;
   font-size: 0.8rem;
   padding: 5px 5px 5px 10px;
   border-radius: 3px;
   border: none;
+  font-family: var(--font-primary);
 }
 
-.comment form textarea {
+#description {
+  font-family: var(--font-primary);
+  width: 100%;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 5px 5px 10px;
   height: 5rem;
+  text-align: start;
 }
 
 .meal_detail {

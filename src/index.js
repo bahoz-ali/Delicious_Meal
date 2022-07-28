@@ -1,19 +1,21 @@
 import './normalize.css';
 import './style.css';
 import {
+  displayAllComments,
   displayAllMeals,
   displayMealCountInHeader,
   updateDetailPopupMeal,
   updateHeartLikes,
 } from './utils';
 
-
-
-import { increaseLike } from './service';
+import { addComment, increaseLike } from './service';
 
 const popupSection = document.querySelector('.popup-section');
 const mealList = document.querySelector('.meal_list');
 const closePopupBtn = document.querySelector('#close_popup');
+const commentForm = document.querySelector('#comment_form');
+const usernameInput = document.querySelector('#name');
+const descriptionInput = document.querySelector('#description');
 
 document.addEventListener('DOMContentLoaded', () => {
   displayMealCountInHeader();
@@ -25,6 +27,7 @@ mealList.addEventListener('click', async (event) => {
 
   if (target.id === 'comment_btn') {
     const mealId = target.dataset.idmeal;
+    commentForm.setAttribute('data-idmeal', mealId);
 
     updateDetailPopupMeal(mealId);
     popupSection.classList.add('popup--open');
@@ -38,4 +41,17 @@ mealList.addEventListener('click', async (event) => {
 
 closePopupBtn.addEventListener('click', () => {
   popupSection.classList.remove('popup--open');
+});
+
+commentForm.addEventListener('submit',async (event) => {
+  event.preventDefault();
+
+  const item_id = event.target.dataset.idmeal;
+  const username = usernameInput.value;
+  const comment = descriptionInput.value;
+
+  await addComment({ item_id, username, comment });
+  displayAllComments(item_id);
+
+  commentForm.reset()
 });

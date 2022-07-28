@@ -95,7 +95,8 @@
               <div class="add-comment">
                 <h3>Add Comment</h3>
               </div>
-              <form class="form">
+
+              <form id="comment_form" class="form">
                 <input
                   type="text"
                   name="name"
@@ -103,15 +104,13 @@
                   placeholder="Your name"
                   required
                 />
-                <textarea
+                <input
                   name="description"
                   id="description"
-                  cols="30"
-                  rows="10"
                   placeholder="Your insight"
-                  required
-                ></textarea>
-                <button class="btn btn--primary">comment</button>
+                />
+                
+                <button type="submit" class="btn btn--primary">comment</button>
               </form>
             </div>
           </div>
