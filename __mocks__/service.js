@@ -6,7 +6,7 @@ const likes = [
 ];
 
 export default function getAllLikes() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     resolve(likes);
   });
 }

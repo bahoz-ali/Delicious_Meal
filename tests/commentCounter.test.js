@@ -1,4 +1,4 @@
-import { numberComments } from '../src/service';
+import { numberComments } from '../src/service.js';
 
 const comments = [
   {

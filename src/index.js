@@ -6,9 +6,9 @@ import {
   displayMealCountInHeader,
   updateDetailPopupMeal,
   updateHeartLikes,
-} from './utils';
+} from './utils.js';
 
-import { addComment, increaseLike } from './service';
+import { addComment, increaseLike } from './service.js';
 
 const popupSection = document.querySelector('.popup-section');
 const mealList = document.querySelector('.meal_list');

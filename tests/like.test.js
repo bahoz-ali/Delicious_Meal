@@ -1,4 +1,4 @@
-import { getOneMealLikes, numberLikes } from '../src/service';
+import { numberLikes } from '../src/service.js';
 
 const likes = [
   {
@@ -10,8 +10,8 @@ const likes = [
 // jest.mock('../src/service.js');
 
 describe('test likes', () => {
-  it('should return the number of the likes right',  () => {
-    const result =  numberLikes(likes[0]);
+  it('should return the number of the likes right', () => {
+    const result = numberLikes(likes[0]);
 
     expect(result).toBe(10);
   });

@@ -1,4 +1,4 @@
-import { API } from './variables';
+import { API } from './variables.js';
 
 export const getMeals = async () => {
   try {
@@ -38,7 +38,7 @@ export const getAllLikes = async () => {
 
 export const getOneMealLikes = async (id) => {
   const likes = await getAllLikes();
-  console.log(likes);
+
   const result = likes.find((o) => +o.item_id === +id);
 
   if (!result) return 0;

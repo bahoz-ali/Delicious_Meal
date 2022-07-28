@@ -1,10 +1,10 @@
-import { commentComponent, instructionComponent, mealCard } from './components';
+import { commentComponent, instructionComponent, mealCard } from './components.js';
 import {
   getMeals,
   getOneMeal,
   getOneMealComments,
   getOneMealLikes,
-} from './service';
+} from './service.js';
 
 const mealList = document.querySelector('.meal_list');
 const commentList = document.querySelector('.comments');
