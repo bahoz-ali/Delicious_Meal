@@ -38,7 +38,7 @@ export const getAllLikes = async () => {
 
 export const getOneMealLikes = async (id) => {
   const likes = await getAllLikes();
-
+  console.log(likes);
   const result = likes.find((o) => +o.item_id === +id);
 
   if (!result) return 0;
@@ -96,3 +96,4 @@ export const addComment = async (commentObj) => {
 };
 
 export const numberComments = (comments) => comments.length;
+export const numberLikes = (meal) => meal.likes;
